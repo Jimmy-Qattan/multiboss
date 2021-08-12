@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/@croquet/croquet@0.4.0"></script>
+  </head>
+  <body>
+    
+    <meter id="health"
+      min="0" max="150"
+      low="33" high="66" optimum="80"
+      value="150"
+      style="width: 100%; height: 5%"
+      >
+      at 50/100
+    </meter>
+
+    
+    <a-scene id="scene" embedded>
+      <a-sky color="lightblue"></a-sky>
+      <a-assets>
+        <a-asset-item
+          src="https://cdn.glitch.com/8e438bb3-b338-4e43-a2f1-36c0fc6dae80%2Funtitled.glb?v=1628719054959"
+          id="creeperModel"
+        ></a-asset-item>
+        <a-asset-item
+          src="https://cdn.glitch.com/8e438bb3-b338-4e43-a2f1-36c0fc6dae80%2Fscene%20(3).glb?v=1628741925199"
+          id="cityModel"
+        ></a-asset-item>
+        
+        
+      <audio id="creeperBeingWeird" crossorigin="anonymous" src="https://cdn.glitch.com/8e438bb3-b338-4e43-a2f1-36c0fc6dae80%2FRecord%20(online-voice-recorder.com)%20(5).mp3?v=1628734822438"></audio>
+      
+      <audio id="creeperGotYou" crossorigin="anonymous" src="https://cdn.glitch.com/8e438bb3-b338-4e43-a2f1-36c0fc6dae80%2FRecord%20(online-voice-recorder.com)%20(6).mp3?v=1628743069338"></audio>
+        
+      </a-assets>
+      
+      <a-light position="285.555 1298.447 364.983" intensity="3"></a-light>
+      
+      <a-camera id="camera" position="0 40 -20"></a-camera>
+      
+      <a-box id="box1" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box2" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box3" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box4" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box5" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box6" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box7" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box8" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box9" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+      <a-box id="box10" scale="2 2 2" position="0 -10 0" color="blue"></a-box>
+
+      <a-entity gltf-model="#creeperModel" id="creeper" position="0 40 0" rotation="-90 0 0" scale="0.2 0.2 0.2">
+        <a-sound src="#creeperBeingWeird" id="creeperBeingWeirdAudio" volume="10" loop="true" autoplay="true"></a-sound>
+        <a-sound src="#creeperGotYou" id="creeperGotYou" volume="10" loop="true" autoplay="true"></a-sound>
+      </a-entity>
+      
+      <a-entity
+        gltf-model="#cityModel"
+        id="city"
+        position="0 -40 0"
+      ></a-entity>
+      
+      
+      
+    </a-scene>
+    
+    <script src="game.js"></script>
+  </body>
+</html>
